@@ -1,6 +1,6 @@
 # PMG Macro Engine — Pillar 1: Growth Momentum
 
-**Portfolio Management Group (PMG) | SMIF Macro Model Initiative**  
+**Portfolio Management Group (PMG)**  
 Part of the four-pillar forward-looking macro regime framework described in the PMG initiative brief.
 
 ---
@@ -215,6 +215,7 @@ For Pillar 2 (Financial Conditions), Pillar 3 (Inflation & Policy), and Pillar 4
 
 ## Authors & Context
 
-Built for the PMG SMIF Macro Model Initiative, Spring 2026.  
+Built for the PMG Macro Model Initiative, Spring 2026
 Framework designed by Breanna Jones (Chief Economic Officer).  
 Pillar 1 data collection: Milcah (Growth Lead).
+Pillar 1 code and analysis: Animesh Shrestha (Economics Associate)
