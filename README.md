@@ -108,8 +108,10 @@ reproducible free historical breadth dataset was not established.
 ISM history is optional. FRED's NAPM and NAPMNON downloads return 404. ICE high-yield history
 now covers only three years, so it is downloaded as a reference supplement and
 excluded from the long-history core. Raw data, processed data and generated
-figures stay local: FRED access does not imply redistribution rights for Moody's,
-ICE, Cboe or Yahoo-supplied data. No licensed observations are published here.
+figures stay local. The [redistribution review](docs/redistribution.md) identifies
+public-domain agency sources, provider restrictions and unresolved FRED service
+terms affecting cached data and model use. Download access is not a blanket
+license to publish the combined dataset or its outputs.
 
 ## Repository
 

@@ -13,8 +13,8 @@ root to generate model results and figures.
 | `as_of/` | Separate results for runs with `--as-of YYYY-MM-DD` |
 
 These folders are tracked using placeholder files. Generated results stay local
-and are ignored by Git. Review the underlying data's redistribution rights before
-publishing charts or tables.
+and are ignored by Git. The [rights review](../docs/redistribution.md) distinguishes
+raw observations from derived results and records outstanding publication questions.
 
 See [methodology](../docs/methodology.md) and [validation](../docs/validation.md)
 for interpretation and historical test limits.
