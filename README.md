@@ -1,16 +1,16 @@
 # PMG Macro Regime Engine
 
-A reproducible monthly research implementation of PMG's Spring 2026 four-pillar
-framework. It preserves separate growth, credit, inflation/policy, and market
-signals, discovers joint historical regimes, and summarizes sector performance
-within those regimes. Outputs are research classifications, not investment advice.
+I built this macro regime model for Georgia State University's Portfolio
+Management Group (PMG). It combines economic, credit, inflation, and market data
+to classify historical macro environments and study how U.S. equity sectors
+behaved within them.
 
 | Pillar | Question | Main inputs |
 |---|---|---|
-| 1 — Growth Momentum | Is activity strengthening or weakening? | Industrial production, retail sales, payrolls, real consumption |
-| 2 — Financial Conditions | Is credit tightening or stress building? | Baa–Treasury spread, yield curve, NFCI, lending standards |
-| 3 — Inflation & Policy | How do inflation and rates interact? | CPI, core CPI, PPI, fed funds, breakevens, ex-post real 10Y yield |
-| 4 — Market Signals | Is market leadership becoming defensive? | RSP/IVV, IWM/IVV, IYW/IVV, cyclical/defensive ETFs, VIX |
+| Growth Momentum | Is activity strengthening or weakening? | Industrial production, retail sales, payrolls, real consumption |
+| Financial Conditions | Is credit tightening or stress building? | Baa–Treasury spread, yield curve, NFCI, lending standards |
+| Inflation & Policy | How are inflation and monetary conditions changing? | CPI, core CPI, PPI, fed funds, breakevens, ex-post real 10Y yield |
+| Market Signals | Is market leadership becoming defensive? | RSP/IVV, IWM/IVV, IYW/IVV, cyclical/defensive ETFs, VIX |
 
 ## Run
 
@@ -27,7 +27,7 @@ python -m pytest -q
 reports per-series success/failure and dates, and regenerates validated monthly
 inputs. It uses the FRED API when `FRED_API_KEY` is set, otherwise FRED's official
 keyless CSV downloads. Yahoo ETF history is retrieved through `yfinance`.
-No API key is committed or printed. Excel is not required for the new engine.
+No API key is committed or printed. Excel is not required.
 
 ```sh
 # Historical cutoff using today's revised data; excludes the cutoff calendar month
@@ -80,8 +80,8 @@ averages regime labels. Full coefficient, profile and diagnostic tables support
 the economic interpretation. The map is a two-dimensional slice of a model that
 can retain more than two PCs.
 
-See [methodology](docs/methodology.md), [source decisions](docs/sources.md),
-[prototype audit](docs/prototype_audit.md), and [validation](docs/validation.md).
+See [methodology](docs/methodology.md), [data sources](docs/sources.md), and
+[validation](docs/validation.md) for details.
 
 ## Coverage and limitations
 
@@ -105,7 +105,7 @@ taxes, and do not validate allocation rules. XLRE starts in 2015 and XLC in 2018
 neither is backfilled into 2008. Earnings revision breadth is excluded because a
 reproducible free historical breadth dataset was not established.
 
-ISM history is optional. FRED legacy ISM codes return 404. ICE high-yield history
+ISM history is optional. FRED's NAPM and NAPMNON downloads return 404. ICE high-yield history
 now covers only three years, so it is downloaded as a reference supplement and
 excluded from the long-history core. Raw data, processed data and generated
 figures stay local: FRED access does not imply redistribution rights for Moody's,
@@ -114,16 +114,10 @@ ICE, Cboe or Yahoo-supplied data. No licensed observations are published here.
 ## Repository
 
 ```text
-pillar_1/ ... pillar_4/   Economic feature definitions
-src/                    Ingestion, validation, transforms, PCA/regimes, composite,
-                        sectors, plotting, archived-vintage diagnostics
-data/raw/               Ignored source snapshots and local caches
-data/processed/         Ignored monthly inputs and validation reports
-outputs/                Ignored generated research artifacts
-tests/                  Numerical, time-alignment and pipeline tests
-docs/                   Methodology, sources, audit and validation
-legacy/spring2026/       Original prototype source, preserved for comparison
+pillar_1/ ... pillar_4/   Pillar definitions
+src/                    Data, modeling, composite, sector analysis and plotting
+data/                   Local raw and processed data
+outputs/                Generated results
+tests/                  Pipeline and numerical tests
+docs/                   Methodology, data sources and validation
 ```
-
-Framework: PMG Macro Model Initiative, Breanna Jones, Spring 2026. The original
-Python prototype by Animesh Shrestha is preserved in `legacy/` and Git history.

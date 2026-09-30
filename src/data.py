@@ -159,7 +159,7 @@ def write_manual_requests(root, failures, probes):
               "Request licensed historical data from ISM; do not scrape historical releases.",
               "Files: data/raw/local/ISM_MANUFACTURING.csv and ISM_SERVICES.csv; columns: date,value.",
               "Use --include-ism only when you have permission to use these data. They are never committed.",
-              "Official FRED legacy-code attempts: " + json.dumps(probes), ""]
+              "Official FRED optional-series requests: " + json.dumps(probes), ""]
     out = root / "outputs/latest"
     out.mkdir(parents=True, exist_ok=True)
     (out / "manual_download_requests.md").write_text("\n".join(lines), encoding="utf-8")

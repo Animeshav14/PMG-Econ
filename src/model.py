@@ -1,8 +1,4 @@
-"""Train-only scaling/PCA, K-Means diagnostics, authoritative GMM regimes.
-
-The PCA and sklearn modeling idioms extend the Spring 2026 prototype. Regime
-confidence is now the probability of the very component supplying its label.
-"""
+"""Training-only scaling and PCA, K-Means diagnostics, and GMM regime probabilities."""
 from dataclasses import dataclass
 import numpy as np
 import pandas as pd

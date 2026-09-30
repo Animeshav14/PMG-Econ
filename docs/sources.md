@@ -7,12 +7,11 @@ timestamp, snapshot path and SHA-256. Source observations and source response
 files remain separate from processed monthly features. The public coverage CSV
 contains metadata only, not source values.
 
-## Verified corrections
+## Macro data choices
 
-- The guide's `BAAA` returns 404 from the official FRED CSV route. Use
-  [BAA10Y](https://fred.stlouisfed.org/series/BAA10Y), Moody's Baa yield less 10Y
+- The model uses [BAA10Y](https://fred.stlouisfed.org/series/BAA10Y), Moody's Baa yield less 10Y
   Treasury yield, as an investment-grade credit-spread proxy. It is not a broad
-  investment-grade option-adjusted spread.
+  investment-grade option-adjusted spread. A request for `BAAA` returned 404.
 - [DRBLACBS](https://fred.stlouisfed.org/series/DRBLACBS) is business-loan
   **delinquency**, not lending standards. Download it as context. The model uses
   [DRTSCILM](https://fred.stlouisfed.org/series/DRTSCILM), the SLOOS net percentage
@@ -25,9 +24,9 @@ contains metadata only, not source values.
 - [BAMLH0A0HYM2](https://fred.stlouisfed.org/series/BAMLH0A0HYM2) states that from
   April 2026 only three years are provided. The download confirms September 2023
   onward. The engine downloads this recent high-yield series but excludes it
-  from the core long-history matrix rather than inventing earlier observations.
+  from the core long-history matrix because of its limited coverage.
 - [GS10](https://fred.stlouisfed.org/series/GS10) minus backward CPI inflation is
-  the guide's ex-post real-rate proxy. No neutral rate is fabricated.
+  the ex-post real-rate proxy. It does not estimate a neutral rate.
 
 All other FRED inputs are linked directly in the registry: INDPRO, RSAFS,
 PAYEMS, CPIAUCSL, CPILFESL, PPIACO, FEDFUNDS, T5YIE, T10Y2Y, NFCI, VIXCLS and
@@ -40,9 +39,9 @@ Use `yfinance.Ticker.history(period="max", auto_adjust=False, actions=True)`;
 preserve the downloaded frame and select `Adj Close` consistently. See the
 [official yfinance documentation](https://ranaroussi.github.io/yfinance/reference/api/yfinance.Ticker.history.html).
 Prices are dividend/split adjusted. Returns are called adjusted-price returns,
-not an audited total-return series. ETF selection implements PMG's stated
-comparisons: IYW versus IVV is explicitly retained, as are equal/cap weight,
-small/large cap, defensive/cyclical rotation and VIX.
+not an audited total-return series. Market features compare technology with
+the broad market (IYW/IVV), equal with cap weight, small with large cap, and
+cyclical with defensive sectors. VIX measures market volatility.
 
 The eleven sectors are XLB, XLC, XLE, XLF, XLI, XLK, XLP, XLRE, XLU, XLV and XLY.
 Issuer inception dates differ from the first exchange-trading observation:
@@ -61,7 +60,7 @@ never used to invent a full-month return.
 
 ## Optional unavailable data
 
-Both official legacy ISM downloads were attempted:
+Both official FRED ISM downloads were attempted:
 
 - `https://fred.stlouisfed.org/graph/fredgraph.csv?id=NAPM&cosd=1900-01-01`: 404.
 - `https://fred.stlouisfed.org/graph/fredgraph.csv?id=NAPMNON&cosd=1900-01-01`: 404.
@@ -79,7 +78,7 @@ controls. Optional request:
 | Range | Longest permitted monthly history, preferably 2000-present or longer |
 | Format | CSV, columns `date,value`; ISO observation dates and numeric PMI levels |
 | Location | `data/raw/local/ISM_MANUFACTURING.csv`, `data/raw/local/ISM_SERVICES.csv` |
-| Why manual | Legacy endpoint unavailable; historical-use permission must be obtained from ISM |
+| Why manual | FRED endpoints unavailable; historical-use permission must be obtained from ISM |
 
 See [ISM's terms](https://www.ismworld.org/footer/terms-of-use/). Files are optional:
 the default four-pillar engine runs without them. To include them, supply both
@@ -107,12 +106,10 @@ skipped rather than given a fictitious regime.
 Public access is not a redistribution license. The FRED Baa spread includes
 Moody's restrictions; ICE's notes prohibit redistribution without permission;
 Cboe and Yahoo observations also require source-specific rights review. All raw
-inputs, processed observations, generated figures, vintage responses and old
+inputs, processed observations, generated figures, vintage responses and
 workbooks are ignored by Git. The public branch publishes code, methodology,
 source links, coverage metadata and test/validation descriptions only. It does
 not publish underlying licensed prices, macro observations or private PMG files.
 
 Run-generated charts are local meeting/research artifacts. Before placing them
 on a public website, confirm any applicable rights for the underlying sources.
-Old data already present in historical commits remain in history; this branch
-does not rewrite history or claim to erase earlier distribution.

@@ -1,22 +1,10 @@
-# Methodology and specification decisions
+# Methodology
 
-## Governing instructions
-
-All three supplied documents were read in full: the March 2 kickoff (four pages),
-March 30 Python proposal (three pages), and Week 1 Data Guide. Their economic
-questions and three-stage modeling pipeline govern the design. The user's
-current implementation request overrides earlier assignment instructions.
-
-| Document statement | Implementation decision |
-|---|---|
-| March 2 swaps pillars 2 and 3 | Use March 30/Week 1 numbering everywhere in the supported engine |
-| Week 1 says not to build yet | Superseded by the explicit request to implement all four pillars |
-| Week 1 requires Excel submissions | Source snapshots and CSV panels are the engine; old Excel is archival |
-| Proposal suggests three master signals | Retain components based on measured variance; no fixed three-PC constraint |
-| Proposal describes the engine as predictive | Descriptive and out-of-sample fits are distinguished; no unvalidated predictive claim |
-| Proposal links confidence to position sizing | Produce historical statistics only; no allocation rule is implemented |
-| “AI Catalyst” | Public name is Market Signals; IYW/IVV is a market rotation measure |
-| Real rate: 10Y minus inflation | GS10 minus backward-looking CPI YoY, in percentage points; no neutral-rate estimate |
+The model groups monthly indicators into Growth Momentum, Financial Conditions,
+Inflation & Policy, and Market Signals. Each pillar uses PCA to reduce correlated
+inputs and a Gaussian mixture model to classify macro states. A composite model
+combines the pillar factors. Sector statistics describe returns associated with
+those states; they do not prescribe portfolio weights.
 
 ## Inputs and transformations
 

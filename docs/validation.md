@@ -1,14 +1,12 @@
 # Validation record
 
-Validation snapshot: September 30, 2026. Baseline source commit:
-`2fdb18fcc507e67d3c9db86077b208afaa5c20df`. Work is isolated on
-`research/four-pillar-macro-engine`; no main merge or history rewrite is performed.
+Validation snapshot: September 30, 2026, using Python 3.12.
 
 ## End-to-end execution
 
 The downloader retrieved all 35 enabled series/instruments: 20 FRED macro and
 reference series and 15 ETFs. FRED's keyless official CSV endpoint and Yahoo's
-adjusted-price history both worked. The optional legacy ISM codes and BAAA
+adjusted-price history both worked. The optional NAPM, NAPMNON and BAAA downloads
 were attempted and returned 404. Snapshot hashes and retrieval timestamps are
 stored locally. No enabled source was stale under the documented thresholds.
 
@@ -19,8 +17,8 @@ month is July 2026. Per-series dates appear in `data_coverage.csv` and the
 run-generated `outputs/tables/data_coverage.csv`.
 
 Generated maps, sector heatmap, PCA diagnostics, pillar timelines and historical
-signal figures were inspected. The 2D landscape uses a conditional slice through
-the retained PC space; it does not pretend that all regime boundaries lie in 2D.
+signal figures were inspected. The 2D landscape holds the omitted principal
+components at their latest values when drawing regime boundaries.
 Dark heatmap cells use contrasting light text. No generated figure is added to
 the public branch without resolving underlying data redistribution rights.
 
@@ -71,8 +69,9 @@ events, and do not validate a trading strategy.
 The 2019–2020 run requests exact month-end vintages for every required macro
 input. It classifies 21 of 24 months; January–March 2019 lack a complete eligible
 released panel and are skipped: retail-sales growth is missing in all three,
-and real-consumption growth is also missing in February. The 2020 pre-period again has no advance stress
-alert and one defensive alert (August 2019). The revised-data weak-growth alert
+and real-consumption growth is also missing in February. The 2020 pre-period
+again has no advance stress alert and one defensive alert (August 2019).
+The revised-data weak-growth alert
 before 2020 does not survive the archived-macro test, illustrating revision risk.
 
 An official January 2008 NFCI vintage request returns 404. ALFRED lists NFCI's
@@ -90,18 +89,16 @@ result is a macro-vintage-aware historical diagnostic, not a fully audited live
 portfolio backtest. Exact unavailable dates and source errors are saved locally
 under `outputs/vintage_backtest/`.
 
-## Publication and Git checks
+## Repository checks
 
 Source code and documentation are reviewed separately from ignored raw data,
 processed panels, generated outputs, private planning files and credentials.
-The original prototype code is archived; old tracked raw data, figures/results
-and bytecode are removed from the branch's current tree, with history preserved.
-The branch remains unmerged. Download and run locally to reproduce the charts.
+Tracked files exclude raw observations, generated figures, result tables and
+bytecode. Download and run locally to reproduce the charts.
 
-## Files still needed from the user
+## Optional inputs
 
-None for the enabled core engine: all required data was acquired programmatically.
+All required core data was acquired programmatically.
 Optional licensed ISM history and longer ICE history are described in
 `sources.md`. These do not block the four-pillar pipeline. Missing archival
-vintages are a data-history limitation, not a request to fabricate or manually
-fill unavailable historical releases.
+vintages limit which historical information sets can be tested.

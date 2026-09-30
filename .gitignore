@@ -9,7 +9,6 @@ pytest-cache-files-*/
 tmp/
 data/raw/
 **/data/raw/
-legacy/**/data/
 data/processed/
 outputs/
 *.xlsx
