@@ -103,13 +103,13 @@ skipped rather than given a fictitious regime.
 
 ## Publication boundary
 
-Public access is not a redistribution license. The FRED Baa spread includes
-Moody's restrictions; ICE's notes prohibit redistribution without permission;
-Cboe and Yahoo observations also require source-specific rights review. All raw
-inputs, processed observations, generated figures, vintage responses and
-workbooks are ignored by Git. The public branch publishes code, methodology,
-source links, coverage metadata and test/validation descriptions only. It does
-not publish underlying licensed prices, macro observations or private PMG files.
+The [redistribution review](redistribution.md) covers all 35 downloaded series
+and distinguishes original-agency permissions from delivery-service conditions.
+Several agency datasets are public domain; the combined FRED/Yahoo download is
+not covered by one license. The review also identifies unresolved terms affecting
+local caching and model use, which Git exclusions alone do not resolve.
 
-Run-generated charts are local meeting/research artifacts. Before placing them
-on a public website, confirm any applicable rights for the underlying sources.
+Raw inputs, processed observations, generated figures, vintage responses and
+workbooks remain ignored. Source links, coverage metadata, methodology and
+validation descriptions are published. The review documents the conditions for
+releasing additional data and derived results.
