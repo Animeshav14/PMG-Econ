@@ -121,3 +121,7 @@ outputs/                Generated results
 tests/                  Pipeline and numerical tests
 docs/                   Methodology, data sources and validation
 ```
+
+The [data](data/README.md) and [outputs](outputs/README.md) folders include tracked
+instructions and placeholders. Downloads, processed datasets and generated
+results populate those folders locally and remain ignored by Git.
