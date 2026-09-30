@@ -1,0 +1,36 @@
+code,name,source,url,frequency,units,first_observation,latest_observation,retrieved_at,status
+INDPRO,Industrial Production: Total Index,FRED,https://fred.stlouisfed.org/series/INDPRO,monthly,"2017=100, SA",1919-01-01,2026-08-01,2026-09-30T04:16:35.549721+00:00,ok
+RSAFS,Advance Retail Sales: Retail Trade and Food Services,FRED,https://fred.stlouisfed.org/series/RSAFS,monthly,"million USD, SA",1992-01-01,2026-08-01,2026-09-30T04:16:35.549721+00:00,ok
+PAYEMS,"All Employees, Total Nonfarm",FRED,https://fred.stlouisfed.org/series/PAYEMS,monthly,"thousand persons, SA",1939-01-01,2026-08-01,2026-09-30T04:16:35.549721+00:00,ok
+PCEC96,Real Personal Consumption Expenditures (cross-check),FRED,https://fred.stlouisfed.org/series/PCEC96,monthly,"billion chained 2017 USD, SAAR",2007-01-01,2026-07-01,2026-09-30T04:16:35.549721+00:00,ok
+PCE,Personal Consumption Expenditures,FRED,https://fred.stlouisfed.org/series/PCE,monthly,"billion USD, SAAR",1959-01-01,2026-07-01,2026-09-30T04:16:35.549721+00:00,ok
+PCEPI,PCE Chain-type Price Index,FRED,https://fred.stlouisfed.org/series/PCEPI,monthly,"2017=100, SA",1959-01-01,2026-07-01,2026-09-30T04:16:35.549721+00:00,ok
+BAA10Y,Moody's Baa yield less 10Y Treasury yield,FRED,https://fred.stlouisfed.org/series/BAA10Y,daily,percentage points,1986-01-02,2026-09-28,2026-09-30T04:16:35.549721+00:00,ok
+T10Y2Y,10Y Treasury less 2Y Treasury,FRED,https://fred.stlouisfed.org/series/T10Y2Y,daily,percentage points,1976-06-01,2026-09-29,2026-09-30T04:16:35.549721+00:00,ok
+NFCI,Chicago Fed National Financial Conditions Index,FRED,https://fred.stlouisfed.org/series/NFCI,weekly,index,1971-01-08,2026-09-18,2026-09-30T04:16:35.549721+00:00,ok
+DRTSCILM,"Net banks tightening C&I lending standards, large/middle firms",FRED,https://fred.stlouisfed.org/series/DRTSCILM,quarterly,percent,1990-04-01,2026-07-01,2026-09-30T04:16:35.549721+00:00,ok
+BAMLH0A0HYM2,ICE BofA US High Yield Option-Adjusted Spread,FRED,https://fred.stlouisfed.org/series/BAMLH0A0HYM2,daily,percentage points,2023-09-30,2026-09-28,2026-09-30T04:16:35.549721+00:00,ok
+DRBLACBS,"Business loan delinquency rate, all commercial banks",FRED,https://fred.stlouisfed.org/series/DRBLACBS,quarterly,"percent, SA",1987-01-01,2026-04-01,2026-09-30T04:16:35.549721+00:00,ok
+CPIAUCSL,CPI All Urban Consumers: All Items,FRED,https://fred.stlouisfed.org/series/CPIAUCSL,monthly,"1982-84=100, SA",1947-01-01,2026-08-01,2026-09-30T04:16:35.549721+00:00,ok
+CPILFESL,CPI All Items Less Food and Energy,FRED,https://fred.stlouisfed.org/series/CPILFESL,monthly,"1982-84=100, SA",1957-01-01,2026-08-01,2026-09-30T04:16:35.549721+00:00,ok
+PPIACO,Producer Price Index: All Commodities,FRED,https://fred.stlouisfed.org/series/PPIACO,monthly,"1982=100, NSA",1913-01-01,2026-08-01,2026-09-30T04:16:35.549721+00:00,ok
+FEDFUNDS,Effective Federal Funds Rate,FRED,https://fred.stlouisfed.org/series/FEDFUNDS,monthly,percent,1954-07-01,2026-08-01,2026-09-30T04:16:35.549721+00:00,ok
+T5YIE,5-Year Breakeven Inflation Rate,FRED,https://fred.stlouisfed.org/series/T5YIE,daily,percent,2003-01-02,2026-09-29,2026-09-30T04:16:35.549721+00:00,ok
+GS10,10-Year Treasury Constant Maturity Yield,FRED,https://fred.stlouisfed.org/series/GS10,monthly,percent,1953-04-01,2026-08-01,2026-09-30T04:16:35.549721+00:00,ok
+VIXCLS,CBOE Volatility Index: VIX,FRED,https://fred.stlouisfed.org/series/VIXCLS,daily,index,1990-01-02,2026-09-28,2026-09-30T04:16:35.549721+00:00,ok
+USREC,NBER Recession Indicator (retrospective reference only),FRED,https://fred.stlouisfed.org/series/USREC,monthly,0/1,1900-01-01,2026-08-01,2026-09-30T04:16:35.549721+00:00,ok
+IVV,IVV,Yahoo Finance / yfinance,https://finance.yahoo.com/quote/IVV/history/,daily,USD adjusted close,2000-05-19,2026-09-29,2026-09-30T04:16:35.549721+00:00,ok
+RSP,RSP,Yahoo Finance / yfinance,https://finance.yahoo.com/quote/RSP/history/,daily,USD adjusted close,2003-05-01,2026-09-29,2026-09-30T04:16:35.549721+00:00,ok
+IWM,IWM,Yahoo Finance / yfinance,https://finance.yahoo.com/quote/IWM/history/,daily,USD adjusted close,2000-05-26,2026-09-29,2026-09-30T04:16:35.549721+00:00,ok
+IYW,IYW,Yahoo Finance / yfinance,https://finance.yahoo.com/quote/IYW/history/,daily,USD adjusted close,2000-05-19,2026-09-29,2026-09-30T04:16:35.549721+00:00,ok
+XLB,XLB,Yahoo Finance / yfinance,https://finance.yahoo.com/quote/XLB/history/,daily,USD adjusted close,1998-12-22,2026-09-29,2026-09-30T04:16:35.549721+00:00,ok
+XLC,XLC,Yahoo Finance / yfinance,https://finance.yahoo.com/quote/XLC/history/,daily,USD adjusted close,2018-06-19,2026-09-29,2026-09-30T04:16:35.549721+00:00,ok
+XLE,XLE,Yahoo Finance / yfinance,https://finance.yahoo.com/quote/XLE/history/,daily,USD adjusted close,1998-12-22,2026-09-29,2026-09-30T04:16:35.549721+00:00,ok
+XLF,XLF,Yahoo Finance / yfinance,https://finance.yahoo.com/quote/XLF/history/,daily,USD adjusted close,1998-12-22,2026-09-29,2026-09-30T04:16:35.549721+00:00,ok
+XLI,XLI,Yahoo Finance / yfinance,https://finance.yahoo.com/quote/XLI/history/,daily,USD adjusted close,1998-12-22,2026-09-29,2026-09-30T04:16:35.549721+00:00,ok
+XLK,XLK,Yahoo Finance / yfinance,https://finance.yahoo.com/quote/XLK/history/,daily,USD adjusted close,1998-12-22,2026-09-29,2026-09-30T04:16:35.549721+00:00,ok
+XLP,XLP,Yahoo Finance / yfinance,https://finance.yahoo.com/quote/XLP/history/,daily,USD adjusted close,1998-12-22,2026-09-29,2026-09-30T04:16:35.549721+00:00,ok
+XLRE,XLRE,Yahoo Finance / yfinance,https://finance.yahoo.com/quote/XLRE/history/,daily,USD adjusted close,2015-10-08,2026-09-29,2026-09-30T04:16:35.549721+00:00,ok
+XLU,XLU,Yahoo Finance / yfinance,https://finance.yahoo.com/quote/XLU/history/,daily,USD adjusted close,1998-12-22,2026-09-29,2026-09-30T04:16:35.549721+00:00,ok
+XLV,XLV,Yahoo Finance / yfinance,https://finance.yahoo.com/quote/XLV/history/,daily,USD adjusted close,1998-12-22,2026-09-29,2026-09-30T04:16:35.549721+00:00,ok
+XLY,XLY,Yahoo Finance / yfinance,https://finance.yahoo.com/quote/XLY/history/,daily,USD adjusted close,1998-12-22,2026-09-29,2026-09-30T04:16:35.549721+00:00,ok
